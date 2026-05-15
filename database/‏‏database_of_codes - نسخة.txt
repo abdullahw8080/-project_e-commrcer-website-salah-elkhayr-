@@ -1,0 +1,186 @@
+-- إنشاء قاعدة البيانات
+      CREATE DATABASE project_ecommerce;
+
+-- استخدام قاعدة البيانات
+     USE project_ecommerce;
+
+-- جدول نوع المستخدم 
+CREATE TABLE type_user (
+    Type_user_id INT AUTO_INCREMENT PRIMARY KEY,
+    Type_use VARCHAR(50) NOT NULL
+);
+
+-- جدول المستخدمين
+CREATE TABLE Users (
+    User_id INT AUTO_INCREMENT PRIMARY KEY,
+    User_name VARCHAR(100) NOT NULL,
+    User_email VARCHAR(100) NOT NULL UNIQUE,
+    User_phone VARCHAR(20) NOT NULL UNIQUE,
+    Type_user_id INT NOT NULL,
+    Password VARCHAR(50) NOT NULL,
+    FOREIGN KEY (Type_user_id) REFERENCES type_user(Type_user_id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+-- جدول الأقسام
+CREATE TABLE Section (
+    Section_id INT AUTO_INCREMENT PRIMARY KEY,
+    Section_name VARCHAR(50) NOT NULL UNIQUE,
+    section_image VARCHAR(255) NOT NULL
+);
+
+-- جدول وحدة المنتج
+CREATE TABLE product_unit (
+    p_unit_id INT AUTO_INCREMENT PRIMARY KEY,
+    product_unit VARCHAR(50) NOT NULL
+);
+
+
+
+-- جدول المنتجات
+CREATE TABLE products (
+    P_id INT AUTO_INCREMENT PRIMARY KEY,
+    P_name VARCHAR(100) NOT NULL UNIQUE,
+    P_old_price INT,
+    P_new_price INT NOT NULL,
+    P_quantity INT NOT NULL,
+    discount INT,
+    p_unit_id INT NOT NULL,
+    p_description VARCHAR(255) ,
+    p_weight VARCHAR(100) ,
+    Section_id INT NOT NULL,
+    FOREIGN KEY (p_unit_id) REFERENCES product_unit(p_unit_id) ON DELETE CASCADE,
+    FOREIGN KEY (Section_id) REFERENCES Section(Section_id) ON DELETE CASCADE
+);
+
+-- جدول صور المنتجات
+CREATE TABLE product_images (
+    image_id INT(10) PRIMARY KEY AUTO_INCREMENT,
+    P_id INT(10)NOT NULL,
+    P_img VARCHAR(255) NOT NULL,
+    FOREIGN KEY (P_id) REFERENCES products(P_id) ON DELETE CASCADE
+);
+
+--  جدول  المنتجات المفضلة
+CREATE TABLE prefer_products (
+    PP_id INT(10) PRIMARY KEY AUTO_INCREMENT,
+    User_id INT(10)NOT NULL,
+    P_id INT(10)NOT NULL,
+    FOREIGN KEY (User_id) REFERENCES Users(User_id) ON DELETE CASCADE,
+    FOREIGN KEY (P_id) REFERENCES products(P_id) ON DELETE CASCADE
+);
+
+-- جدول نوع الدفع
+CREATE TABLE Type_payment (
+    Type_payment_id INT AUTO_INCREMENT PRIMARY KEY,
+    Type_payment VARCHAR(50) NOT NULL
+);
+
+
+-- جدول عنوان الطلب
+CREATE TABLE Orders_address (
+    OD_id INT AUTO_INCREMENT PRIMARY KEY,
+    Client_name VARCHAR(50) NOT NULL,
+    Client_phone VARCHAR(20) NOT NULL,
+    Client_state VARCHAR(50) NOT NULL,
+    Client_city VARCHAR(50) NOT NULL,
+    Client_street VARCHAR(50) NOT NULL,
+    Client_neb VARCHAR(50) NOT NULL,
+    Billing_id VARCHAR(25) NOT NULL,
+    Dep_id VARCHAR(25) NOT NULL,
+    Type_payment_id INT NOT NULL,
+    FOREIGN KEY (Client_phone) REFERENCES Users(User_phone) ON DELETE CASCADE,
+    FOREIGN KEY (Type_payment_id) REFERENCES Type_payment(Type_payment_id) ON DELETE CASCADE
+);
+
+
+-- جدول عنوان الطلب المعلق
+CREATE TABLE pending_Orders_address (
+    OD_id INT AUTO_INCREMENT PRIMARY KEY,
+    Client_name VARCHAR(50) NOT NULL,
+    Client_phone VARCHAR(20) NOT NULL,
+    Client_state VARCHAR(50) NOT NULL,
+    Client_city VARCHAR(50) NOT NULL,
+    Client_street VARCHAR(50) NOT NULL,
+    Client_neb VARCHAR(50) NOT NULL,
+    Billing_id VARCHAR(25) NOT NULL,
+    Dep_id VARCHAR(25) NOT NULL,
+    Type_payment_id INT NOT NULL,
+    FOREIGN KEY (Client_phone) REFERENCES Users(User_phone) ON DELETE CASCADE,
+    FOREIGN KEY (Type_payment_id) REFERENCES Type_payment(Type_payment_id) ON DELETE CASCADE
+);
+
+
+-- جدول الطلبات
+CREATE TABLE Orders (
+    Or_id INT AUTO_INCREMENT PRIMARY KEY,
+    OD_id INT NOT NULL,
+    Total_price INT,
+    Or_date VARCHAR(100),
+    FOREIGN KEY (OD_id) REFERENCES Orders_address(OD_id) ON DELETE CASCADE
+);
+
+-- جدول الطلبات المعلقة
+CREATE TABLE pending_Orders (
+    Or_id INT AUTO_INCREMENT PRIMARY KEY,
+    OD_id INT NOT NULL,
+    Total_price INT,
+    Or_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (OD_id) REFERENCES pending_Orders_address(OD_id) ON DELETE CASCADE
+
+);
+
+-- جدول المنتجات المطلوبة
+CREATE TABLE order_items (
+    or_items_id INT AUTO_INCREMENT PRIMARY KEY,
+    P_id INT NOT NULL,
+    or_id INT NOT NULL,
+    quantity INT,
+    price decimal(11,2),
+    FOREIGN KEY (P_id) REFERENCES products(P_id) ON DELETE CASCADE,
+    FOREIGN KEY (or_id) REFERENCES Orders( Or_id) ON DELETE CASCADE
+);
+
+
+--  جدول المنتجات المطلوبة المعلقة
+CREATE TABLE pending_order_items (
+    or_items_id INT AUTO_INCREMENT PRIMARY KEY,
+    P_id INT NOT NULL,
+    or_id INT NOT NULL,
+    quantity INT,
+    price decimal(11,2),
+    FOREIGN KEY (P_id) REFERENCES products(P_id) ON DELETE CASCADE,
+    FOREIGN KEY (or_id) REFERENCES pending_Orders( Or_id) ON DELETE CASCADE
+);
+
+-- جدول تعليقات العملاء
+CREATE TABLE User_comments (
+    Co_id INT AUTO_INCREMENT PRIMARY KEY,
+    C_name VARCHAR(50) NOT NULL,
+    User_email VARCHAR(100) NOT NULL,
+    comment VARCHAR(100) NOT NULL,
+    comment_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (User_email) REFERENCES Users(User_email) ON DELETE CASCADE
+);
+
+
+/*ALTER TABLE pending_Orders
+DROP FOREIGN KEY pending_Orders_ibfk_1; -- إسقاط الفورين كي القديم
+
+ALTER TABLE pending_Orders
+ADD CONSTRAINT pending_Orders_ibfk_1
+FOREIGN KEY (OD_id) REFERENCES pending_Orders_address(OD_id) ON DELETE CASCADE;
+*/
+
+/*-- Trigger لحساب إجمالي السعر تلقائيًا
+DELIMITER //
+
+CREATE TRIGGER calculate_total_price BEFORE INSERT ON Orders
+FOR EACH ROW
+BEGIN
+    DECLARE product_price INT;
+    SELECT P_new_price INTO product_price FROM products WHERE P_id = NEW.P_id;
+    SET NEW.Total_price = NEW.Quantity * product_price;
+END; //
+
+DELIMITER ;*/

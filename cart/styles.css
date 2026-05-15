@@ -1,0 +1,93 @@
+*{
+    text-decoration: none;
+    font-family: "Cairo", serif;
+
+}
+body {
+    display: flex;
+    background-color: #f4f4f4;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.content {
+    text-align: center;
+    flex: 0.5;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 5px;
+    margin: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2 {
+    color: #333;
+}
+
+form {
+    
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+
+}
+
+input[type="file"] {
+    background-color: #ffffff;
+}
+
+form select,
+form button {
+    width: 93%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #47c45c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 15px;
+}
+
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 18px;
+    }
+
+ 
+    tr td img {
+        width: 30px; /* مزيد من التصغير */
+    }
+
+    form input,
+    form select,
+    form button {
+        font-size: 12px;
+    }
+}

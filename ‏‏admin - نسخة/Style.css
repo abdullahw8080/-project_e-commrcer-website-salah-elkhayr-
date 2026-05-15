@@ -1,0 +1,146 @@
+
+*{
+    text-decoration: none;
+    font-family: "Cairo", serif;
+
+}
+body {
+    display: flex;
+    background-color: #f4f4f4;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.content {
+    text-align: center;
+    flex: 0.7;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 5px;
+    margin: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2 {
+    color: #333;
+}
+
+form {
+    
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+
+}
+
+input[type="file"] {
+    background-color: #ffffff;
+}
+
+form select,
+form button {
+    width: 93%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #00b31e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 15px;
+}
+
+form button:hover {
+    background-color: #008516;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+
+}
+
+table th{
+    
+    padding: 10px;
+    background-color: #00b31e;
+    color: white;
+
+}
+table td {
+    padding: 10px;
+    border: 3 solid black;
+    text-align: center;
+}
+
+
+table tr:hover {
+    background-color: #f9f9f9;
+}
+table tr td button a{
+    color: white;
+}
+table tr td button{
+    width: 50px;
+    border: none;
+    padding: 5px;
+    color: white;
+    border-radius: 2px;
+}
+table tr td #update{
+    background-color: #00b31e;
+    transition: .40s;
+}
+table tr td #update:hover{
+    background-color: #007413;
+
+}
+
+table tr td #delete{
+    background-color: #ff0303;
+    transition: .40s;
+}
+
+table tr td #delete:hover{
+    background-color: #8e0000;
+
+}
+tr td img{
+    width: 60px;
+}
+.images_input div {
+    width: 238px;
+    padding-right:15px;
+}
+.images_input{
+    padding-right:15px;
+
+    display: flex;
+}

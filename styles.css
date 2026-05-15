@@ -1,0 +1,1081 @@
+*{
+    font-family: "Cairo", serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;   
+    text-decoration: none;
+}
+body{
+    direction: rtl;
+}
+
+/*الهدر حق البحث*/
+.header_seaction{
+    width: 100%;
+    z-index: 1000
+   /* z-index: 1000;
+    position: fixed;*/
+}
+.search_filed_and_icons{
+    background-color: #ffffff;
+    z-index: 1000;
+    width: 100%;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    margin-left: 0px;
+    padding:20px 40px;
+    justify-content: space-between;
+}
+.menue_button .bx-menu  ,  .search_icon .bx-search-alt{
+    font-size: 30px;
+    text-align: center;
+    display: none;
+
+}
+.search_filed_and_icons .logo{
+    justify-content: center;
+    display: flex;
+    width: 200px;
+}
+.search_filed_and_icons .logo h2{
+    text-align: center;
+    margin-left: 10px;
+    color: #02921a;
+}
+.search_filed_and_icons .logo h2 span{
+    color: #ffbb00;
+}
+.logo img{
+    width: 60px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.search_filed_and_icons .logo a i{
+    color: #02921a;
+}
+
+.search_filed{
+    width: 39%;
+    height: 40px;
+    border: 2px solid #26df44;
+    border-radius: 10px;
+    padding-right: 10px;
+
+}
+.search_filed .search_input {
+    border-radius: 10px;
+    width: 75%;
+    height: 35px;
+    border: none;
+    outline: none;
+    padding: 0px 10px;
+    font-size: 15px;
+
+}
+.search_filed a{
+    color: #02921a;
+    border: none;
+    font-size: 18px;
+    
+}
+.search_filed .button_search{
+    height: 30px;
+    width: 65px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background-color: #26df44;
+    font-weight: 900;
+    color: white;
+    transition: .20s;
+
+}
+.search_filed .button_search:active{
+    background-color: #02921a;
+    color: #ffffff;
+
+}
+
+.user_and_cart_heart_icons a{
+    position: relative;
+    font-size: 17px;
+    text-align: center;
+    margin-left: 20px;
+    background-color: #d9fadf;
+    padding: 0px 7px;
+    border-radius: 50px;
+    color: #02921a;
+}
+.user_and_cart_heart_icons a span{
+    position: absolute;
+    top: -10px;   
+    right: -7px;
+    background-color: #04c524;
+    color: white;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 13px;
+}
+
+
+.light_and_dark a{
+    font-size: 17px;
+    text-align: center;
+    background-color: #d9fadf;
+    color: #02921a;
+    padding: 0px 7px;
+    border-radius: 50px;
+    font-size: 15px;
+}
+
+/*--=======================(second headr)========================-->*/
+.contents{
+    position: absolute;
+    width: 100%;
+    background-color: #26df44;
+    padding: 10px 30px;
+    text-align: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+.contents a{
+    font-size: 15px;
+    font-weight: 700;
+    margin-right: 30px;
+    padding: 3px 5px;
+    transition: .10s ease;
+    color: white;
+}
+.contents a:hover{
+    border-bottom: 3px solid white;
+
+}
+.contents a i{
+    margin-left: 10px;
+    font-size: 20px;
+}
+.contents select{
+    margin-right: 55px;
+    background: none;
+    outline: none;
+    border: none;
+    font-weight: 700;
+    transition: .10s ease;
+    color: white;
+}
+
+.contents select option{
+    color: black;
+}
+
+/*--=======================(home section)========================-->*/
+.home{
+    padding: 10px 20px;
+    overflow: hidden;
+
+}
+
+
+swiper-container {
+    width: 90%;
+    height: 150px; /* يمكنك تعديل الارتفاع حسب الحاجة */
+    position: relative;
+}
+
+
+.swiper-slide {
+    text-align: center;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 50px;
+
+
+}
+
+.swiper-slide img {
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.botton_header{
+    display: none;
+}
+
+/*======================(قسم الاقسام)=============================*/
+.section_itms{
+    width: 100%;
+    text-align: center;
+    padding:10px 20px;
+}
+.items_and_text_headr{
+    padding-top: 25px;
+    background-color: #e6ffeb;
+    border-radius: 10px;
+    border: 1.5px solid #35fa59;
+
+}
+.section_itms .items_and_text_headr h2{
+    color: #2e2f2f;
+    margin-bottom: 30px;
+    font-weight: 900;
+}
+.section_logos{
+    padding: 10px 0px 40px 0px;
+    text-align: center;
+    display:grid;
+    grid-template-columns: repeat(auto-fit , minmax(150px , auto));
+    gap: 1.5rem;
+    justify-content: center;
+    
+}
+.section_logos a .item{
+    background-color: #fcffff;
+    border: 1px solid rgb(67, 227, 70);
+    width: 150px;
+    height: 40vh;
+    text-align: center;
+    border-radius: 10px;
+    transition: .5s ease;
+
+}
+.section_logos a .item:hover{
+    transform:translateY(-10px);
+
+}
+.section_logos .item img{
+    width: 90%;
+}
+.section_logos .item h3{
+    color: black;
+}
+
+
+/*======================( قسم العروض والمنتجات الاكثر مبيعا)=============================*/
+.section_Offers ,.more_payment{
+    width: 100%;
+    text-align: center;
+    padding:10px 20px;
+}
+
+.section_Offers .items_and_text_headr h2{
+    color: #2e2f2f;
+    margin-bottom: 30px;
+    font-weight: 900;
+}
+.Products{
+    padding:10px 20px 30px;
+    text-align: center;
+    display:grid;
+    grid-template-columns: repeat(auto-fit , minmax(158px , auto));
+    gap: 1.5rem;
+    justify-content: center;
+    
+}
+.item_product {
+    background-color: #fcffff;
+    border: 1px solid rgb(67, 227, 70);
+    width: 180px;
+    height: 104%;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    font-weight: 900;
+    transition: .5s ease;
+}
+.item_product a img{
+        width: 130px;
+}
+
+/*========(بداية خصائص التحكم في زر  زيادة ونقص النتاجات)=====*/
+.quantity-control {
+    position: absolute;
+    right: 24px;
+    
+}
+  
+  .expand-quantity {
+    font-size: 20px;
+    padding: 0px 12px;
+    cursor: pointer;
+    border: none;
+    background-color: #26df44;
+    color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .expand-quantity:hover {
+    background-color: #13a42c;
+  }
+  
+  .expand-quantity.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .quantity-input-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0px;
+    opacity: 0;
+    overflow: hidden;
+    transition: width 0.3s ease, opacity 0.3s ease;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .quantity-input-container.active {
+    height: 20px;
+    width: 130px;
+    background-color: #26df44;
+    opacity: 1;
+  }
+  
+   .quantity {
+    width: 50px;
+    text-align: center;
+    height: 30px;
+    outline: none;
+    border: none;
+    background-color: #26df44;
+    color: white;
+  }
+  
+   .decrease,
+   .increase {
+    font-weight: 900;
+    font-size: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    background-color: #26df44;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .decrease:hover,
+  .increase:hover {
+    background-color: #26df44;
+  }
+/*==============(نهاية خصائص زر زيادة ونقص المنتج)==================*/
+.descraip{
+    font-weight: 700;
+    margin-top: 35px;
+}
+
+.descraip p s {
+    color: #2e2f2f;
+    font-size: 13px;
+    text-decoration: line-through;
+}
+.cart_button button{
+   font-weight: 700;
+   width: 155px;
+   height: 28px;
+   background-color: #26df44;
+   border: none;
+   border-radius: 5px;
+   color: white;
+    transition: .20s ease;
+}
+.cart_button button:hover{
+    background-color: #267533;
+
+}
+.cart_button button i{
+    margin-right: 5px;
+    font-size: 18px;
+}
+.descraip p .span_2{
+    font-size: 10px;
+    color:#6f6f6f;}
+
+.discount{
+    text-align: center;
+    clip-path: polygon(0% 0%, 100% 1%, 81% 50%, 99% 100%, 0% 100%);        background: #ff8000;
+    height: 27px;
+    width: 55px;
+    position: absolute;
+    top: 16px;
+    border-radius: 0px 5px 5px 0px;
+    left: 0px;
+}
+.discount p{
+    font-size: 15px;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+}
+
+.heart{
+    width: 0px;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+
+}
+.heart .bx-heart{
+    font-size: 20px;
+    color:  #ff8000;
+}
+/*--=======================(footer section)========================-->*/
+footer{
+    position: relative;
+    width: 100%;
+    background-color: #d9fadf;
+    border-top:3px solid #35fa59;
+    padding-bottom: 10px;
+    margin-top: 20px;
+}
+footer .arrow_up{
+   
+    width: 100%;
+}
+.arrow_up a i{
+    position: absolute;
+    background-color: #26df44;
+    font-size: 33px;
+    padding: 5px;
+    border-radius: 50%;
+    transition: .5s ease;
+    color: white;
+    left: 595px;
+    top: -25px;
+    transition: .50s ease;
+
+}
+.arrow_up a i:hover{
+    transform:translateY(-5px);
+
+
+}
+
+footer .content_info{
+    width: 100%;
+    padding:10px 30px;
+    text-align: center;
+    display:grid;
+    grid-template-columns: repeat(auto-fit , minmax(158px , auto));
+    gap: 1.5rem;
+    padding-right: 100px
+ ;
+}
+.content_info .frist_info{
+    width: 200px;
+}
+.frist_info .logo{
+    justify-content: center;
+    display: flex;
+    width: 200px;
+    margin-bottom: 10px;
+}
+.frist_info .logo h2{
+    text-align: center;
+    margin-left: 10px;
+    color: #02921a;
+}
+.frist_info .logo h2 span{
+    color: #ffbb00;
+}
+.content_info .your_count h2{
+    color: #056c16;
+}
+.content_info .your_count a{
+    display: block;
+    color: black;
+    transition: .20s ease;
+}
+.content_info .your_count a:hover{
+    color: #035711;
+}
+
+.services_pay h2{
+    color: #035711;
+}
+.services_pay_logoes{
+    padding-top: 10px;
+    text-align: center;
+    display:grid;
+    grid-template-columns: repeat(auto-fit , minmax(10px , auto));
+    gap: 2.5rem;
+    margin-left: 30px;
+    
+}
+.services_pay_logoes img{
+    width: 50px;
+    border-radius: 50%;
+    transition: .5s ease;
+
+}
+.services_pay_logoes img:hover{
+    transform:translateY(-5px);
+
+}
+.send_comments form P{
+
+}
+.content_info .send_comments form{
+    width: 350px;
+    height: 50vh;
+    padding: 10px 25px 10px 10px ;
+}
+.content_info .send_comments form input{
+    
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 3px solid rgb(67, 227, 70);
+    border-radius: 5px;
+    padding: 5px;
+    outline: none;
+    transition: .15s;
+    
+}
+.content_info .send_comments form input:hover{
+    box-shadow:0 0 5px #26df44;
+}
+.content_info .send_comments form textarea{
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 30vh;
+    border: 3px solid rgb(67, 227, 70);
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 13px;
+    outline: none;
+    transition: .15s;
+}
+.content_info .send_comments form textarea:hover{
+    box-shadow:0 0 5px #26df44;
+}
+.content_info .send_comments form button{
+    align-items: center;
+    width: 100%;
+    height: 23px;
+    font-weight: 700;
+    background-color: #26df44;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    transition: .20s ease;
+        
+}
+.content_info .send_comments form button:hover{
+    background-color: #267533;
+
+}
+footer .whatsapp a i{
+    position: fixed;
+    z-index: 1000;
+    bottom: 30px;
+    font-size: 30px;
+    color: white;
+    background-color: #26df44;
+    left: 20px;
+    padding: 10px;
+    border-radius: 50%;
+    transition: .5s ease;
+
+}
+
+footer .whatsapp a i:hover{
+    transform:translateY(-5px);
+    box-shadow: 0 0 10px  #26df44;
+}
+ .connects_app{
+    text-align: center;
+    width: 100%;
+
+}
+footer .connects_app a i{
+    margin-left: 20px;
+    font-size: 20px;
+    background-color: #26df44;
+    padding: 5px;
+    border-radius: 50%;
+    transition: .5s ease;
+    color: white;
+}
+footer .connects_app a i:hover{
+    transform:translateY(-5px);
+    
+}
+footer .text_owner{
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+
+
+/*--=======================(footer section)========================-->*/
+footer{
+    position: relative;
+    width: 100%;
+    background-color: #d9fadf;
+    border-top:3px solid #35fa59;
+    padding-bottom: 10px;
+    margin-top: 20px;
+}
+footer .arrow_up{
+   
+    width: 100%;
+}
+.arrow_up a i{
+    position: absolute;
+    background-color: #26df44;
+    font-size: 33px;
+    padding: 5px;
+    border-radius: 50%;
+    transition: .5s ease;
+    color: white;
+    left: 595px;
+    top: -25px;
+    transition: .50s ease;
+
+}
+.arrow_up a i:hover{
+    transform:translateY(-5px);
+
+
+}
+
+footer .content_info{
+    width: 100%;
+    padding:10px 30px;
+    text-align: center;
+    display:grid;
+    grid-template-columns: repeat(auto-fit , minmax(158px , auto));
+    gap: 1.5rem;
+    padding-right: 100px
+ ;
+}
+.content_info .frist_info{
+    width: 200px;
+}
+.frist_info .logo{
+    justify-content: center;
+    display: flex;
+    width: 200px;
+    margin-bottom: 10px;
+}
+.frist_info .logo h2{
+    text-align: center;
+    margin-left: 10px;
+    color: #02921a;
+}
+.frist_info .logo h2 span{
+    color: #ffbb00;
+}
+.content_info .your_count h2{
+    color: #056c16;
+}
+.content_info .your_count a{
+    display: block;
+    color: black;
+    transition: .20s ease;
+}
+.content_info .your_count a:hover{
+    color: #035711;
+}
+
+.services_pay h2{
+    color: #035711;
+}
+.services_pay_logoes{
+    padding-top: 10px;
+    text-align: center;
+    display:grid;
+    grid-template-columns: repeat(auto-fit , minmax(10px , auto));
+    gap: 2.5rem;
+    margin-left: 30px;
+    
+}
+.services_pay_logoes img{
+    width: 50px;
+    border-radius: 50%;
+    transition: .5s ease;
+
+}
+.services_pay_logoes img:hover{
+    transform:translateY(-5px);
+
+}
+
+.content_info .send_comments form{
+    width: 350px;
+    height: 50vh;
+    padding: 10px 25px 10px 10px ;
+}
+.content_info .send_comments form input{
+    
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 3px solid rgb(67, 227, 70);
+    border-radius: 5px;
+    padding: 5px;
+    outline: none;
+    transition: .15s;
+    
+}
+
+.content_info .send_comments form input:hover{
+    box-shadow:0 0 5px #26df44;
+}
+.content_info .send_comments form textarea{
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 30vh;
+    border: 3px solid rgb(67, 227, 70);
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 13px;
+    outline: none;
+    transition: .15s;
+}
+.content_info .send_comments form textarea:hover{
+    box-shadow:0 0 5px #26df44;
+}
+.content_info .send_comments form button{
+    align-items: center;
+    width: 100%;
+    height: 23px;
+    font-weight: 700;
+    background-color: #26df44;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    transition: .20s ease;
+        
+}
+.content_info .send_comments form button:hover{
+    background-color: #267533;
+
+}
+footer .whatsapp a i{
+    position: fixed;
+    z-index: 1000;
+    bottom: 30px;
+    font-size: 30px;
+    color: white;
+    background-color: #26df44;
+    left: 20px;
+    padding: 10px;
+    border-radius: 50%;
+    transition: .5s ease;
+
+}
+
+footer .whatsapp a i:hover{
+    transform:translateY(-5px);
+    box-shadow: 0 0 10px  #26df44;
+}
+ .connects_app{
+    text-align: center;
+    width: 100%;
+
+}
+footer .connects_app a i{
+    margin-left: 20px;
+    font-size: 20px;
+    background-color: #26df44;
+    padding: 5px;
+    border-radius: 50%;
+    transition: .5s ease;
+    color: white;
+}
+footer .connects_app a i:hover{
+    transform:translateY(-5px);
+    
+}
+footer .text_owner{
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+/*==========================(اكواد تحميل الصفحة)==========================*/
+#loading {
+    padding: 185px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ccc;
+    border-top: 5px solid #00ae03;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+p {
+    font-size: 16px;
+    color: #333;
+}
+
+
+
+@media screen and (max-width: 480px) {
+    .home{
+        padding-top: 60px;
+    }
+    .search_filed_and_icons {
+        z-index: 9999; /* قيمة عالية لضمان بقاء الهيدر فوق جميع العناصر */
+        position: fixed; /* تثبيت العنصر في مكانه عند التمرير */
+        top: 0; /* تثبيته في أعلى الصفحة */
+        left: 0; /* تثبيته في الجانب الأيسر */
+        right: 0; /* تثبيته في الجانب الأيمن */
+        display: flex; /* استخدام flexbox لتوزيع العناصر */
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10px; /* مسافة داخلية لتوزيع العناصر بشكل أفضل */
+        background-color: #fff; /* إضافة خلفية لتجنب التداخل مع النصوص */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* إضافة ظل لإبراز الهيدر */
+    }
+    
+    .menue_button .bx-menu {
+        display: block;
+        width: 30px;
+        height: 30px; /* إضافة ارتفاع ليتناسب مع العرض */
+    }
+
+    .search_icon .bx-search-alt {
+        display: block;
+        width: 30px;
+        height: 30px; /* إضافة ارتفاع */
+    }
+    .search_filed form a i {
+        display: none;
+    }
+    .search_filed {
+        position: absolute;
+        width: 250px;
+        background-color: #ffffff;
+        right: 60px;
+        top: -50px;
+        transition: 0.4s; /* تحسين الحركة */
+
+    }
+
+    .search_filed_and_icons .logo {
+        width: 180px;
+    }
+   
+    .logo img {
+        width: 50px;
+    }
+
+    .logo h2 {
+        font-size: 20px;
+    }
+
+    .search_filed .search_input {
+        width: calc(70% - 0px);
+    }
+
+    .user_and_cart_heart_icons,
+    .light_and_dark {
+        display: none;
+    }
+
+    .items_and_text_headr h2{
+        font-size: 20px;
+    }
+   
+    .items_and_text_headr a .item{
+        height: 100%;
+        width: 100px;
+
+    }
+    .items_and_text_headr a .item img{
+        width: 90px;
+    }
+    .section_logos {
+        grid-template-columns: repeat(auto-fit, minmax(85px, auto));
+        gap: 1rem;
+        padding: 5px;
+        
+    }
+    .contents {
+        z-index: 1000;
+        background-color: #00d615;
+        padding: 0; /* توحيد الحواف */
+        position: fixed;
+        right: -200px; /* مخفي خارج الشاشة */
+        width: 200px;
+        height: 100vh; /* ارتفاع كامل الشاشة */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-top: 100px;
+        padding-bottom: 30px;
+        transition: 0.4s; /* تحسين الحركة */
+    }
+    
+    .contents a,
+    .contents select {
+        margin-bottom: 80px;
+        text-align: center;
+    }
+    
+
+    .contents i {
+        display: none;
+    }
+    
+    swiper-container{
+        z-index: -1px;
+
+    }
+    .swiper-slide{
+        padding-top: 20px;
+    }
+
+    .botton_header{
+        display: block;
+        z-index: 9999; /* قيمة عالية لضمان بقاء الهيدر فوق جميع العناصر */
+        position: fixed; /* تثبيت العنصر في مكانه عند التمرير */
+        bottom: 0px;/* تثبيته في اسفل الشاشة */
+        left: 0; /* تثبيته في الجانب الأيسر */
+        right: 0; /* تثبيته في الجانب الأيمن */
+        display: flex; /* استخدام flexbox لتوزيع العناصر */
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10px; /* مسافة داخلية لتوزيع العناصر بشكل أفضل */
+        background-color: #fff; /* إضافة خلفية لتجنب التداخل مع النصوص */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* إضافة ظل لإبراز الهيدر */
+        height: 11vh;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .botton_header a{
+        position: relative;
+        font-size: 17px;
+        text-align: center;
+        margin-left: 5px;
+        padding: 0px 7px;
+        border-radius: 50px;
+        color: #000000;
+    }
+    .botton_header a span{
+        position: absolute;
+        top: -13px;   
+        right: -10px;
+        background-color: #02921a;
+        color: rgb(255, 255, 255);
+        height: 20px;
+        width: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 13px;
+    }
+    
+    
+    .Products{
+        padding: 0px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(125px, auto));
+        gap: 0.5rem;
+    }
+    
+    .item_product a img{
+        padding-top: 5px;
+        width: 100px;
+    }
+    .quantity-control{
+        padding: 0px 0px;
+    }
+
+    .item_product {
+        margin-bottom: 10px;
+        width: 155px;
+        height: 246px;
+
+    }
+ 
+    .quantity-input-container.active{
+        width: 100px;
+    }
+    .item_product .cart_button button{
+        width: 140px;
+    }
+    .increase , .decrease{
+        font-size: 20px;
+    }
+    .quantity-input-container .quantity{
+        width: 20px;
+        font-size: 20px;
+    }
+   
+    footer {
+        position: static;
+
+    }
+    footer .content_info {
+        grid-template-columns: 1fr;
+        padding-right: 10px;
+    }
+
+    .services_pay_logoes img {
+        width: 40px;
+    }
+    .content_info .frist_info{
+        width: 100%;
+
+    }
+    .content_info .frist_info .logo{
+        margin-right: 65px;
+    }
+    .descraip_our_web{
+        padding: 0px 30px;
+
+    }
+    .content_info .frist_info .logo h2{
+        font-size: 30px;
+    }
+    .content_info .frist_info .logo img{
+        width:  50px;
+    }
+}
+
+
+
